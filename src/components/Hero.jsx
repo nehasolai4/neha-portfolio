@@ -1,6 +1,7 @@
 import profile from '../assets/Profile.jpeg'
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { useState, useEffect } from 'react';
+import Starfield from './StarFiled';
 function Hero(){
     const fullText = "NEHA SOLAI"
     const [displayText, setDisplayText]=useState("");
@@ -20,6 +21,7 @@ function Hero(){
     },[])
     return(
         <div className="Hero-section">
+            <Starfield />
             <div className="name">
                 <h2>Hi, I am</h2>
                 <h1 className='typing'>{displayText}</h1>

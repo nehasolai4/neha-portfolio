@@ -6,14 +6,15 @@ import Projects from './components/Projects'
 import Footer from './components/Footer'
 
 
+
 function App(){
   return(
     <div>
       <Navbar />
       <Hero/>
       <About/>
+      <Projects/>      
       <Skills/>
-      <Projects/>
       <Footer/>
     </div>
   )

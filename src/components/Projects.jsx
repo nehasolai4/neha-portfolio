@@ -1,56 +1,65 @@
+import foodBridgeImage from '../assets/projects/FoodBridge.PNG';
+import quizImage from '../assets/projects/Quiz.PNG';
+import portfolioImage from '../assets/projects/Portfolio.PNG';
+
+const projects = [
+  {
+    title: "Food Bridge",
+    desc: "Full-stack platform connecting food donors with recipients to reduce waste.",
+    image: foodBridgeImage,
+    tags: ["React", "Node.js", "MongoDB", "JWT"],
+    github: "https://github.com/nehasolai4/food-bridge-project",
+    live: "https://food-bridge-platform.netlify.app/" // add your deployed URL here if it exists
+  },
+    {
+    title: "Developer Portfolio",
+    desc: "A responsive portfolio built using React and modern CSS with reusable components.",
+    image: portfolioImage,
+    tags: ["React", "CSS", "Vite"],
+    github: "https://github.com/nehasolai4/neha-portfolio",
+    live: null
+  },
+  {
+    title: "Quiz Web Application",
+    desc: "An interactive React quiz that matches users to results using dynamic state.",
+    image: quizImage,
+    tags: ["React", "JavaScript"],
+    github: "https://github.com/nehasolai4/book-boyfriend-matcher",
+    live: "https://book-boyfriend-matcher.vercel.app/"
+  }
+]
+
 function Projects() {
   return (
     <section className="projects" id="projects">
       <h2 className="projects-heading">MY WORKS</h2>
-
       <div className="projects-container">
-
-        <div className="project-card">
-          <div className="project-content">
-            <h3>Developer Portfolio</h3>
-            <p>
-              A responsive portfolio built using React and modern CSS
-              with reusable components and smooth UI interactions.
-            </p>
+        {projects.map((p) => (
+          <div className="project-card" key={p.title}>
+            <div className="project-image">
+              <img src={p.image} alt={p.title} />
+            </div>
+            <div className="project-content">
+              <h3>{p.title}</h3>
+              <p>{p.desc}</p>
+              <div className="tech-tags">
+                {p.tags.map((tag) => (
+                  <span className="tech-tag" key={tag}>{tag}</span>
+                ))}
+              </div>
+            </div>
+            <div className="project-links">
+              {p.live && (
+                <a href={p.live} target="_blank" rel="noopener noreferrer" className="project-btn live-btn">
+                  Live demo
+                </a>
+              )}
+              <a href={p.github} target="_blank" rel="noopener noreferrer" className="project-btn code-btn">
+                Code
+              </a>
+            </div>
           </div>
-          <a href="https://github.com/nehasolai4/neha-portfolio" className="project-btn">Check It Out</a>
-        </div>
-
-        <div className="project-card">
-          <div className="project-content">
-            <h3>Quiz Web Application</h3>
-            <p>
-              An interactive React quiz that matches users to results
-              using dynamic state and conditional rendering.
-            </p>
-          </div>
-          <a href="https://github.com/nehasolai4/book-boyfriend-matcher" className="project-btn">Check It Out</a>
-        </div>
-
-        <div className="project-card">
-          <div className="project-content">
-            <h3>Food Bridge</h3>
-            <p>
-             A full-stack platform that connects food donors with recipients to reduce waste. 
-             Built with React, Node.js, Express, and MongoDB, featuring real-time listings and a smooth claim workflow. 
-             Secured with JWT authentication and role-based access control.
-            </p>
-          </div>
-          <a href="https://github.com/nehasolai4/food-bridge-project" className="project-btn">Check It Out</a>
-        </div>
-        
-        <div className="project-card">
-          <div className="project-content">
-            <h3>Moments in Envelopes</h3>
-            <p>
-              A React-based interactive UI with animated clickable
-              elements that reveal dynamic content.
-            </p>
-          </div>
-          <a href="https://github.com/nehasolai4/anniversary-site" className="project-btn">Check It Out</a>
-        </div>
-
-
+        ))}
       </div>
     </section>
   );

@@ -28,12 +28,14 @@ html {
 
 
 .Hero-section{
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: space-between;   
   align-items: center;              
   padding: 60px 10%; 
   padding-bottom: 90px;
-
+  background: radial-gradient(ellipse at bottom, #0c3380 0%, var(--bg-secondary) 100%);
 }
 
 .name h1{
@@ -222,76 +224,79 @@ nav a:hover {
 /*Skills*/
 
 .skills {
-  padding: 120px 160px;
-  background-color:  var(--bg-main);
+  padding: 80px 80px;
+  padding-top: 40px;
+  background-color: var(--bg-secondary);
   color: var(--text-main);
-  text-align: center;
-  padding-top: 80px;
+  text-align: left;
+  padding-top: 40px;
 }
 
 .skills-heading {
   font-size: 48px;
   margin-bottom: 60px;
   letter-spacing: 3px;
-  color:var(--accent);
+  color: var(--accent);
+}
+
+.skills-category {
+  margin-bottom: 36px;
+}
+
+.skills-category:last-child {
+  margin-bottom: 0;
+}
+
+.skills-category-title {
+  font-size: 20px;
+  color: var(--text-main);
+  opacity: 0.6;
+  letter-spacing: 2px;
+  text-align: left;
+  margin-bottom: 16px;
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 12px;
 }
 
 .skill-card {
-  position: relative;
-  background:var(--card-bg);
-  height: 120px;
-  border-radius: 15px;
   display: flex;
-  justify-content: center;
+  background: var(--card-bg);
   align-items: center;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+  flex-direction: row;
+  width: auto;
+  padding: 8px 16px;
+  border-radius: 30px;
+  gap: 8px;
+  cursor: default;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
-
-.skill-card img {
-  width: 50px;
-  height: 50px;
-  transition: transform 0.3s ease;
+.skill-card svg {
+  width: 20px;
+  height: 20px;
 }
-
 .skill-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
+  background: rgba(9, 146, 194, 0.12);
 }
 
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(9, 146, 194, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-  font-size: 18px;
+.skill-label {
+  font-size: 13px;
 }
 
-.skill-card:hover .overlay {
-  transform: translateY(0);
-}
+
+
 
 
 
 /*Projects*/
 .projects {
   padding: 120px 160px;
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-main);
   color: var(--text-main);
   text-align: center;
 }
@@ -370,6 +375,61 @@ nav a:hover {
   }
 }
 
+.project-image {
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.08);
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.tech-tag {
+  background: rgba(9, 146, 194, 0.15);
+  color: #5fc3e8;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.project-links .project-btn {
+  flex: 1;
+  text-align: center;
+  margin-top: 0;
+}
+
+.live-btn {
+  background-color: var(--accent);
+  border: 2px solid var(--accent);
+}
+
+.live-btn:hover {
+  background-color: #0679a1;
+}
+
+
 /*Footer*/
 .footer {
   color: var(--text-main);
@@ -431,3 +491,18 @@ nav a:hover {
 .theme-toggle.active .toggle-circle {
   transform: translateX(27px);
 }
+
+.starfield {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.stars-move { position: absolute; top: 0; left: 0; width: 100%; height: 1600px; animation: starMove 45s linear infinite; }
+.star-layer { position: absolute; top: 0; left: 0; background: transparent; }
+.star-sm { width: 1px; height: 1px; }
+.star-md { width: 2px; height: 2px; }
+.star-lg { width: 3px; height: 3px; }
+@keyframes starMove { from { transform: translateY(0); } to { transform: translateY(-800px); } }

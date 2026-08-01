@@ -1,50 +1,56 @@
-import { 
-  FaReact, 
-  FaHtml5, 
-  FaCss3Alt, 
-  FaJs, 
-  FaPython, 
-  FaJava 
-} from "react-icons/fa";
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaPython, FaJava, FaNodeJs, FaGitAlt } from "react-icons/fa"
+import { SiTailwindcss, SiMongodb, SiExpress, SiTypescript } from "react-icons/si"
+
+const skillCategories = [
+  {
+    title: "Languages",
+    items: [
+      { icon: FaJs, label: "JavaScript" },
+      { icon: SiTypescript, label: "TypeScript" },
+      { icon: FaPython, label: "Python" },
+      { icon: FaJava, label: "Java" },
+    ],
+  },
+  {
+    title: "Frontend",
+    items: [
+      { icon: FaReact, label: "React" },
+      { icon: FaHtml5, label: "HTML" },
+      { icon: FaCss3Alt, label: "CSS" },
+      { icon: SiTailwindcss, label: "Tailwind CSS" },
+    ],
+  },
+  {
+    title: "Backend & tools",
+    items: [
+      { icon: FaNodeJs, label: "Node.js" },
+      { icon: SiExpress, label: "Express" },
+      { icon: SiMongodb, label: "MongoDB" },
+      { icon: FaGitAlt, label: "Git" },
+    ],
+  },
+]
 
 function Skills() {
   return (
     <section className="skills" id="skills">
       <h2 className="skills-heading">SKILLS</h2>
 
-      <div className="skills-grid">
-        <div className="skill-card">
-          <FaReact size={45} />
-          <div className="overlay">React</div>
+      {skillCategories.map((category) => (
+        <div className="skills-category" key={category.title}>
+          <h3 className="skills-category-title">{category.title}</h3>
+          <div className="skills-grid">
+            {category.items.map(({ icon: Icon, label }) => (
+              <div className="skill-card" key={label}>
+                <Icon size={36} />
+                <span className="skill-label">{label}</span>
+              </div>
+            ))}
+          </div>
         </div>
-
-        <div className="skill-card">
-          <FaHtml5 size={45} />
-          <div className="overlay">HTML</div>
-        </div>
-
-        <div className="skill-card">
-          <FaCss3Alt size={45} />
-          <div className="overlay">CSS</div>
-        </div>
-
-        <div className="skill-card">
-          <FaJs size={45} />
-          <div className="overlay">JavaScript</div>
-        </div>
-
-        <div className="skill-card">
-            <FaPython size={45} />
-            <div className="overlay">Python</div>
-            </div>
-
-            <div className="skill-card">
-            <FaJava size={45} />
-            <div className="overlay">Java</div>
-        </div>
-      </div>
+      ))}
     </section>
-  );
+  )
 }
 
-export default Skills;
+export default Skills
