@@ -1,6 +1,6 @@
 import foodBridgeImage from '../assets/projects/FoodBridge.PNG';
 import quizImage from '../assets/projects/Quiz.PNG';
-import worldCupImage from '../assets/projects/WorldCup.png';
+import worldCupImage from '../assets/projects/Worldcup.PNG';
 
 const projects = [
   {
