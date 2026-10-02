@@ -1,6 +1,7 @@
 import foodBridgeImage from '../assets/projects/FoodBridge.PNG';
 import quizImage from '../assets/projects/Quiz.PNG';
 import portfolioImage from '../assets/projects/Portfolio.PNG';
+import worldCupImage from '../assets/projects/WorldCup.PNG';
 
 const projects = [
   {
@@ -12,11 +13,11 @@ const projects = [
     live: "https://food-bridge-platform.netlify.app/" // add your deployed URL here if it exists
   },
     {
-    title: "Developer Portfolio",
-    desc: "A responsive portfolio built using React and modern CSS with reusable components.",
-    image: portfolioImage,
-    tags: ["React", "CSS", "Vite"],
-    github: "https://github.com/nehasolai4/neha-portfolio",
+    title: "World-Cup ai predictor",
+    desc: "ML-powered match predictor that forecasts Home Win, Draw, or Away Win using historical team stats.",
+    image: worldCupImage,
+    tags: ["Python", "Scikit-learn", "FastAPI", "React"],
+    github: "https://github.com/nehasolai4/world-cup-ai-predictor",
     live: null
   },
   {
@@ -27,6 +28,7 @@ const projects = [
     github: "https://github.com/nehasolai4/book-boyfriend-matcher",
     live: "https://book-boyfriend-matcher.vercel.app/"
   }
+  
 ]
 
 function Projects() {

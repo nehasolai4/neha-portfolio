@@ -1,4 +1,4 @@
-import profile from "../assets/Profile.jpeg";
+import profile from "../assets/Neon Pink Saree Portrait.png";
 
 function About() {
   return (
@@ -13,18 +13,16 @@ function About() {
           <h2>THE PERSON BEHIND THE CODE</h2>
 
           <p>
-            I'm a passionate frontend developer focused on building responsive
-            and user-friendly web applications using React and modern CSS.
+            I'm a CS student at VIT Chennai who loves building for the web, from React interfaces to the APIs behind them. 
+            I'm endlessly curious, which is how I ended up exploring GenAI, semantic search, and machine learning alongside my full-stack projects.
           </p>
 
           <p>
-            I enjoy turning ideas into real-world projects and continuously
-            improving my problem-solving skills through hands-on development.
+            I learn best by building, so I'm always picking up something new and turning ideas into real, working projects.
           </p>
 
           <p>
-            Currently seeking internship opportunities where I can contribute,
-            learn, and grow in a collaborative environment.
+            Right now I'm looking for an internship where I can contribute, keep learning, and grow with a great team.
           </p>
         </div>
 

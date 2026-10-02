@@ -1,4 +1,4 @@
-import profile from '../assets/Profile.jpeg'
+import profile from '../assets/Neon Pink Saree Portrait.png';
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { useState, useEffect } from 'react';
 import Starfield from './StarFiled';
@@ -25,12 +25,19 @@ function Hero(){
             <div className="name">
                 <h2>Hi, I am</h2>
                 <h1 className='typing'>{displayText}</h1>
-                <p className="role">Frontend Developer | React | JavaScript | CSS</p>
+                <p className="role">Full-Stack Developer | React | Node.js | Generative AI</p>
                 <p className="bio">
-                        Frontend developer focused on building responsive, accessible, and user-friendly web applications using React.
+                    CS student who loves building things....
                 </p>
 
                 <div className='buttons'>
+                      <a
+                        href="/resume.pdf"
+                        download="Neha_Solai_Resume.pdf"
+                        className="resume-btn"
+                    >
+                        Download Resume
+                    </a>
                     <a href='#contact' className="contact-btn">
                         Contact Me
                     </a>
